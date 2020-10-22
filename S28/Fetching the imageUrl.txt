@@ -1,0 +1,35 @@
+Fetching the imageUrl
+There's a tiny bug in the code.
+
+When fetching all posts (in the loadPosts method in your frontend code), we have to ensure that we also fetch the imageUrl, such that we can store it for the fetched posts and use it when we edit a post.
+
+Your GraphQL query should look like this (in loadPosts):
+
+const graphqlQuery = {
+      query: `
+        {
+          posts(page: ${page}) {
+            posts {
+              _id
+              title
+              content
+              imageUrl
+              creator {
+                name
+              }
+              createdAt
+            }
+            totalPosts
+          }
+        }
+      `
+    };
+    fetch('http://localhost:8080/graphql', {
+      method: 'POST',
+      headers: {
+        Authorization: 'Bearer ' + this.props.token,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(graphqlQuery)
+    })
+Note that imageUrl was added to the fields we retrieve for every post!

@@ -1,0 +1,43 @@
+Adding Posts & Pagination
+Currently, when adding a new post with only one post being loaded, we end up with one post on the starting page (instead of the expected two posts).
+
+We'll fix that later of course but you can already go ahead and make the required adjustment on your own.
+
+We have to adjust our "add a post" code in the frontend to handle post creation and pagination correctly:
+
+this.setState(prevState => {
+    let updatedPosts = [...prevState.posts];
+    if (prevState.editPost) {
+        const postIndex = prevState.posts.findIndex(
+            p => p._id === prevState.editPost._id
+        );
+        updatedPosts[postIndex] = post;
+    } else {
+        if (prevState.posts.length >= 2) {
+            updatedPosts.pop();
+        }
+        updatedPosts.unshift(post);
+    }
+    return {
+        posts: updatedPosts,
+        isEditing: false,
+        editPost: null,
+        editLoading: false
+    };
+});
+The following if block was added:
+
+if (prevState.posts.length >= 2) {
+    updatedPosts.pop();
+}
+
+
+
+Useful Resources & Links
+Attached, you find the source code for this section.
+
+When using my source code, make sure to run npm install in the extracted folder!
+
+Useful resources:
+
+Detailed Guide on GraphQL: https://graphql.org

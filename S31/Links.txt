@@ -1,0 +1,10 @@
+Useful Resources & Links
+Attached, you find the source code for this section.
+
+When using my source code, make sure to run npm install in the extracted folder!
+
+Useful resources:
+
+Official npm Docs: https://docs.npmjs.com/
+
+Learn more about Webpack (a build tool using Node.js): https://academind.com/learn/webpack

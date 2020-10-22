@@ -1,0 +1,30 @@
+The User Name is Missing!
+Maybe you noticed that on the frontend, the username is missing.
+
+We'll fix that in the next modules but you can also fix it right now of course.
+
+The reason for it missing is that I accidentally removed the populate('creator') step when fetching the post data in our controller action.
+
+Example:
+
+When fetching posts, this snippet:
+
+Post.find()
+    .countDocuments()
+    .then(count => {
+      totalItems = count;
+      return Post.find()
+        .skip((currentPage - 1) * perPage)
+        .limit(perPage);
+    })
+should become
+
+Post.find()
+    .countDocuments()
+    .then(count => {
+      totalItems = count;
+      return Post.find()
+        .populate('creator')
+        .skip((currentPage - 1) * perPage)
+        .limit(perPage);
+    })

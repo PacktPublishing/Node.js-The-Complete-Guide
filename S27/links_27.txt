@@ -1,0 +1,10 @@
+Useful Resources & Links
+Attached, you find the source code for this section.
+
+When using my source code, make sure to run npm install in the extracted folder!
+
+Useful resources:
+
+Socket.io Official Docs: https://socket.io/get-started/chat/
+
+Alternative Websocket Library: https://www.npmjs.com/package/express-ws
