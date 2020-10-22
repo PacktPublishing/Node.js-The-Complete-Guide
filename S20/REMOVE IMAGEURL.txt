@@ -1,0 +1,20 @@
+Remove imageUrl from "Add Product"
+In the postEditProduct controller action, we already removed imageUrl from the data we return to the view if validation fails.
+
+You should do the same for postAddProduct.
+
+Your validation-failed responses should look like this:
+
+return res.status(422).render('admin/edit-product', {
+    pageTitle: 'Add Product',
+    path: '/admin/add-product',
+    editing: false,
+    hasError: true,
+    product: {
+        title: title,
+        price: price,
+        description: description
+    },
+    errorMessage: 'Attached file is not an image.',
+    validationErrors: []
+});

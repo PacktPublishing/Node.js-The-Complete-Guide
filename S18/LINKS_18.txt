@@ -1,0 +1,10 @@
+Useful Resources & Links
+Attached, you find the source code for this section.
+
+When using my source code, make sure to run npm install in the extracted folder!
+
+Useful resources:
+
+Express-Validator Docs: https://express-validator.github.io/docs/
+
+Validator.js (which is used behind the scenes) Docs: https://github.com/chriso/validator.js

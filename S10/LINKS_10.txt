@@ -1,0 +1,16 @@
+Useful Resources & Links
+Attached, you find the source code for this section.
+
+When using my source code, make sure to run npm install in the extracted folder!
+
+Useful resource:
+
+Learn more about MySQL/ SQL in General: https://www.w3schools.com/sql/
+
+Learn more about the Node MySQL Package: https://github.com/sidorares/node-mysql2
+
+https://dev.mysql.com/doc/mysql-getting-started/en/#mysql-getting-started-installing
+
+https://academind.com/learn/web-dev/sql-vs-nosql/
+
+https://pugjs.org/api/getting-started.html
